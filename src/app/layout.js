@@ -8,7 +8,7 @@ import Script from "next/script";
 const publicSans = Public_Sans({
   variable: "--font-public-sans",
   subsets: ["latin"],
-  weight: ["300", "400", "500", "600", "700","800", "900"],
+  weight: ["100","200","300", "400", "500", "600", "700","800", "900"],
 });
 
 const myanmarKhyay = localFont({
