@@ -1,15 +1,12 @@
 "use client";
 
-import { Box ,Typography} from "@mui/material";
+import { Box ,Typography,Button} from "@mui/material";
 import React, { useEffect, useRef } from "react";
 
 
 function Landing_sixth_section() {
-
-
-
   return (
-    <Box sx={{ position: "relative", minHeight: "100vh", background: "#000", overflow: "hidden" }}>
+    <Box sx={{ position: "relative", minHeight: "100vh", background: "#000", overflow: "hidden",boxShadow:"0px 0px 50px 10px rgba(0,0,0,0.5)" }}>
       <Box
         component="video"
         src="./video/wave.mkv"
@@ -33,15 +30,8 @@ function Landing_sixth_section() {
 
          <Typography color="white" variant="body1 " sx={{position:"absolute",top:"40px",letterSpacing:"2px",fontSize:"20px",fontWeight:"200"}}>[ AI Automation ]</Typography>
          <Typography color="white" variant="body1 " sx={{position:"absolute",top:"80px",letterSpacing:"2px",lineHeight:"40px",fontSize:"35px",fontWeight:"500"}}>AI automation that moves your<br/> business forward</Typography>
-
-          <Box component={"img"}src="./effredcraft/effer_ai_logo.svg" sx={{position:"absolute",mt:"100px",height:"150px",width:"150px"}} />
-          <Box component={"img"}src="./effredcraft/efferd_line.svg" sx={{position:"absolute",mt:"100px",height:"600px",width:"600px"}} />
-          <Box component={"img"}src="./effredcraft/database.svg" sx={{position:"absolute",left:"200px",mt:"85px",height:"250px",width:"250px"}} />
-          <Box component={"img"}src="./effredcraft/graph.svg" sx={{position:"absolute",right:"200px",mt:"85px",height:"250px",width:"250px"}} />
-          <Box component={"img"}src="./effredcraft/secure.svg" sx={{position:"absolute",right:"350px",top:"165px",height:"100px",width:"100px"}} />
-          <Box component={"img"}src="./effredcraft/secure.svg" sx={{position:"absolute",left:"350px",top:"165px",height:"100px",width:"100px"}} />
-          <Box component={"img"}src="./effredcraft/secure.svg" sx={{position:"absolute",right:"350px",bottom:"75px",height:"100",width:"100px"}} />
-          <Box component={"img"}src="./effredcraft/secure.svg" sx={{position:"absolute",left:"350px",bottom:"75px",height:"100px",width:"100px"}} />
+      <Box component={"img"}src="./effredcraft/efferBody.svg" sx={{position:"absolute",mt:"100px",height:"1000px",width:"1000px"}} />
+         <Button variant="outlined" sx={{position:"absolute",bottom:"40px",backgroundColor:"none",color:"#fff",borderColor:"#fff",padding:"10px 30px",fontSize:"20px",textTransform:"none","&:hover":{backgroundColor:"#FF6A3D"}}}>Get Started</Button>
         </Box>
       </Box>
     </Box>

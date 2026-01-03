@@ -5,6 +5,7 @@
   import Landing_fifth_section from "../../components/pages/home/Landing_fifth_section";
   import Landing_sixth_section from "../../components/pages/home/Landing_sixth_section";
 import Footer from "../../components/pages/footer/Footer";
+import { Box } from "@mui/material";
 
 export default function Home() {
   return (
