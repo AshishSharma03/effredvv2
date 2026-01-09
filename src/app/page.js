@@ -17,7 +17,7 @@ const LoadingScreen = () =>{
 
     <Box component={"img"} src={"./effredcraft/effer_ai_logo.svg"}  sx={{height:"80px",position:"absolute",zindex:99}}  />
    <CircularProgress sx={{ color: "#ffffff20",position:"absolute" ,Zindex:1}} size={70} thickness={20}  />
-    <Typography variant="body2" sx={{color:"#fff",position:"absolute" ,top:"50px"}}> Site is under maintainece!</Typography>
+    <Typography variant="body2" sx={{color:"#fff",position:"absolute" ,top:"50px"}}>The site is under maintenance.</Typography>
   </Box>)
 }
 
@@ -48,7 +48,7 @@ export default function Home() {
        <Footer/>
        </Box>
     <Box sx={{display:{xl:"none",md:"flex",sm:"flex",xs:"flex"},minHeight:"100vh",background:"#000",flexDirection:"column",justifyContent:"center",alignItems:"center"}}>
-    <Typography variant="body2" sx={{color:"#fff"}}> mobile version is under Development!</Typography>
+    <Typography variant="body2" sx={{color:"#fff"}}>Our mobile version is currently under development.</Typography>
     </Box>
        
     </>
