@@ -7,6 +7,7 @@ export default function DevelopmentProcessSection() {
       sx={{
         width: "100%",
         color: "white",
+        background: "linear-gradient(180deg,rgba(255, 255, 255, 1) 0%, rgba(216, 216, 216, 1) 50%, rgba(150, 150, 150, 1) 68%, rgba(7, 7, 7, 1) 100%);",
         py: 0,
       }}
     >
@@ -119,7 +120,7 @@ export default function DevelopmentProcessSection() {
                     p: "0px 0px 0px 10px",
                   }}
                 >
-                  Discovery
+                  DiscoveryA
                   <br />& Planning
                 </Typography>
                  <Typography

@@ -5,7 +5,7 @@ function Footer() {
   return (
     <Box sx={{minHeight:"100vh",background:"#0C0C0C",position:"relative",display:"flex",justifyContent:"center",alignItems:"end",pb:"80px",boxShadow:"0px 0px 50px 70px rgba(12, 12, 12, 1  )"}}>
      {/* <Box  sx={{position:"absolute",width:"100%",height:"100px",opacity:"1",top:"0px",background:"linear-gradient(180deg,rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0) 100%);",zIndex:99}} /> */}
-     <Box component={"img"}src="./effredcraft/crysts.svg" sx={{position:"absolute",width:"100%",opacity:"0.2",top:"0px"}} />
+     {/* <Box component={"img"}src="./effredcraft/crysts.svg" sx={{position:"absolute",width:"100%",opacity:"0.2"}} /> */}
         <Grid container sx={{}}>
           <Grid item size={4}  sx={{minHeight:"50vh",background:"",display:"flex",flexDirection:"column",justifyContent:"center",alignItems:"start"}}>
             <Box component={"img"} src="./effredcraft/footerImage.svg" sx={{height:"400px",width:"400px"}} />

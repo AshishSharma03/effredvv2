@@ -1,5 +1,173 @@
 import React from 'react'
 import { Box, Typography ,Stack, Grid,Divider, Avatar} from '@mui/material'
+
+
+
+const ServiceCard = ({ icon, title, description }) => {
+  return (
+    <Box
+      sx={{
+        background: "#212121",
+        width: 400,
+        height: 250,
+        borderRadius: "37px",
+        mx: "20px",
+        display: "flex",
+        flexDirection: "column",
+        p: "20px 20px 30px 20px",
+        flexShrink: 0,
+      }}
+    >
+      <Avatar src={icon} sx={{ height: 60, width: 60 }} />
+
+      <Box sx={{ flex: 1 }} />
+
+      <Stack direction="column" sx={{ p: "10px" }}>
+        <Typography
+          color="white"
+          variant="body1"
+          sx={{ fontSize: "35px", fontWeight: 700 }}
+        >
+          {title}
+        </Typography>
+
+        <Typography
+          color="white"
+          variant="body1"
+          sx={{ fontSize: "12px", fontWeight: 100 }}
+        >
+          {description}
+        </Typography>
+      </Stack>
+    </Box>
+  );
+};
+
+const SERVICES_UP = [
+  {
+    icon: "../effredcraft/justest.png",
+    title: "AI Development",
+    description:
+      "Our AI development team builds smart, data-driven applications that enhance decision-making, automate tasks, and deliver measurable impact across industries.",
+  },
+  {
+    icon: "../effredcraft/justest.png",
+    title: "AI Development",
+    description:
+      "Our AI development team builds smart, data-driven applications that enhance decision-making, automate tasks, and deliver measurable impact across industries.",
+  },
+  {
+    icon: "../effredcraft/justest.png",
+    title: "DevOps Services",
+    description:
+      "Our AI development team builds smart, data-driven applications that enhance decision-making, automate tasks, and deliver measurable impact across industries.",
+  },
+   {
+    icon: "../effredcraft/justest.png",
+    title: "DevOps Services",
+    description:
+      "Our AI development team builds smart, data-driven applications that enhance decision-making, automate tasks, and deliver measurable impact across industries.",
+  },
+  
+];
+
+const SERVICES_BOTTOM = [
+  {
+    icon: "../effredcraft/justest.png",
+    title: "AI Development",
+    description:
+      "Our AI development team builds smart, data-driven applications that enhance decision-making, automate tasks, and deliver measurable impact across industries.",
+  },
+  {
+    icon: "../effredcraft/justest.png",
+    title: "SaaS Development",
+    description:
+      "Our AI development team builds smart, data-driven applications that enhance decision-making, automate tasks, and deliver measurable impact across industries.",
+  },
+  {
+    icon: "../effredcraft/justest.png",
+    title: "AI Development",
+    description:
+      "Our AI development team builds smart, data-driven applications that enhance decision-making, automate tasks, and deliver measurable impact across industries.",
+  },
+  {
+    icon: "../effredcraft/justest.png",
+    title: "AI Development",
+    description:
+      "Our AI development team builds smart, data-driven applications that enhance decision-making, automate tasks, and deliver measurable impact across industries.",
+  },
+];
+
+
+const GradientScroller = ({
+  children,
+  top,
+  align = "left", // "left" | "right"
+}) => {
+  const isLeft = align === "left";
+
+  return (
+    <Box
+      sx={{
+        position: "absolute",
+        top,
+        left: isLeft ? 0 : "auto",
+        right: isLeft ? "auto" : 0,
+        width: "94.5%",
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center",
+
+        "&::before": {
+          content: '""',
+          position: "absolute",
+          top: 0,
+          left: 0,
+          bottom: 0,
+          width: isLeft ? 100 : 0,
+          background:
+            "linear-gradient(to left, rgba(0,0,0,0), rgba(0,0,0,0.9))",
+          pointerEvents: "none",
+          zIndex: 1,
+        },
+
+        "&::after": {
+          content: '""',
+          position: "absolute",
+          top: 0,
+          right: 0,
+          bottom: 0,
+          width: isLeft ? 0 : 100,
+          background:
+            "linear-gradient(to right, rgba(0,0,0,0), rgba(0,0,0,0.5))",
+          pointerEvents: "none",
+          zIndex: 1,
+        },
+      }}
+    >
+      <Stack
+        direction="row"
+        sx={{
+          py: "20px",
+          px: "5px",
+          width: "100%",
+          overflowX: "auto",
+          flexWrap: "nowrap",
+          "&::-webkit-scrollbar": { height: "8px" },
+          "&::-webkit-scrollbar-thumb": {
+            backgroundColor: "rgba(0,0,0,.2)",
+            borderRadius: "4px",
+          },
+        }}
+      >
+        {children}
+      </Stack>
+    </Box>
+  );
+};
+
+
+
 function Landing_third_section() {
   return (
     <Box sx={{minHeight:"135vh",background:"#000",position:"relative", overflowX: "clip"}}>
@@ -33,147 +201,19 @@ function Landing_third_section() {
      <Typography color="white" variant="body1" sx={{position:"absolute",top:"168px",left:"95px",letterSpacing:"1px",fontSize:"50px",fontWeight:"700",lineHeight:"50px"}}>Building Smart,<br/> 
 Secure Digital Solutions</Typography>
 
-      <Box sx={{position:"absolute",top:"355px",display:"flex",justifyContent:"center",background:"",alignItems:"center", width:"94.5%",right:"0px",
-         '&::after': {
-      content: '""',
-      position: 'absolute',
-      top: 0,
-      right: 0,
-      bottom: 0,
-      width: '100px',
-      background: 'linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0,0,0,0.5))',
-      pointerEvents: 'none',
-      zIndex: 1
-    },
-    '&::before': {
-      content: '""',
-      position: 'absolute',
-      top: 0,
-      left: 0,
-      bottom: 0,
-      width: '0px',
-      background: 'linear-gradient(to left, rgba(0,0,0,0), rgba(0,0,0,0.5))',
-      pointerEvents: 'none',
-      zIndex: 1
-    }
-      }}>
-        <Stack direction={"row"} sx={{py:"20px",px:"5px",width:"100%"
-        ,overflowX: 'auto',
-      flexWrap: 'nowrap',
-      '& > *': { flexShrink: 0 },
-      '&::-webkit-scrollbar': {
-        height: '8px',
-      },
-      '&::-webkit-scrollbar-thumb': {
-        backgroundColor: 'rgba(0,0,0,.2)',
-        borderRadius: '4px',
-      }}} >
-           <Box sx={{background:"#212121",width:"400px",height:"250px",borderRadius:"37px",p:"20px",mx:"20px",display:"flex",flexDirection:"column",gap:"5px",p:"20px 20px 30px 20px"}}>
-            <Avatar src='../effredcraft/justest.png' sx={{height:"60px",width:"60px"}} />
-            <Box  sx={{flex:1}}/>
-            <Stack direction={"column"} sx={{p:"10px"}}>
-            <Typography color="white" variant="body1" sx={{fontSize:"35px",fontWeight:"700"}}>AI Development</Typography>
-            <Typography color="white" variant="body1" sx={{fontSize:"12px",fontWeight:"100"}}>Our AI development team builds smart, data-driven applications that enhance decision-making, automate tasks, and deliver measurable impact across industries.</Typography>
-           </Stack>
-            </Box>
-            <Box sx={{background:"#212121",width:"400px",height:"250px",borderRadius:"37px",p:"20px",mx:"20px",display:"flex",flexDirection:"column",gap:"5px",p:"20px 20px 30px 20px"}}>
-            <Avatar src='../effredcraft/justest.png' sx={{height:"60px",width:"60px"}} />
-            <Box  sx={{flex:1}}/>
-            <Stack direction={"column"} sx={{p:"10px"}}>
-            <Typography color="white" variant="body1" sx={{fontSize:"35px",fontWeight:"700"}}>AI Development</Typography>
-            <Typography color="white" variant="body1" sx={{fontSize:"12px",fontWeight:"100"}}>Our AI development team builds smart, data-driven applications that enhance decision-making, automate tasks, and deliver measurable impact across industries.</Typography>
-           </Stack>
-            </Box>
-            <Box sx={{background:"#212121",width:"400px",height:"250px",borderRadius:"37px",p:"20px",mx:"20px",display:"flex",flexDirection:"column",gap:"5px",p:"20px 20px 30px 20px"}}>
-            <Avatar src='../effredcraft/justest.png' sx={{height:"60px",width:"60px"}} />
-            <Box  sx={{flex:1}}/>
-            <Stack direction={"column"} sx={{p:"10px"}}>
-            <Typography color="white" variant="body1" sx={{fontSize:"35px",fontWeight:"700"}}>AI Development</Typography>
-            <Typography color="white" variant="body1" sx={{fontSize:"12px",fontWeight:"100"}}>Our AI development team builds smart, data-driven applications that enhance decision-making, automate tasks, and deliver measurable impact across industries.</Typography>
-           </Stack>
-            </Box>
-             <Box sx={{background:"#212121",width:"400px",height:"250px",borderRadius:"37px",p:"20px",mx:"20px",display:"flex",flexDirection:"column",gap:"5px",p:"20px 20px 30px 20px"}}>
-            <Avatar src='../effredcraft/justest.png' sx={{height:"60px",width:"60px"}} />
-            <Box  sx={{flex:1}}/>
-            <Stack direction={"column"} sx={{p:"10px"}}>
-            <Typography color="white" variant="body1" sx={{fontSize:"35px",fontWeight:"700"}}>AI Development</Typography>
-            <Typography color="white" variant="body1" sx={{fontSize:"12px",fontWeight:"100"}}>Our AI development team builds smart, data-driven applications that enhance decision-making, automate tasks, and deliver measurable impact across industries.</Typography>
-           </Stack>
-            </Box>
-        </Stack>
-      </Box>
 
-      <Box sx={{position:"absolute",top:"665px",display:"flex",justifyContent:"center",background:"",alignItems:"center", width:"94.5%",left:"0px",
-        '&::after': {
-      content: '""',
-      position: 'absolute',
-      top: 0,
-      right: 0,
-      bottom: 0,
-      width: '0px',
-      background: 'linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0,0,0,0.5))',
-      pointerEvents: 'none',
-      zIndex: 1
-    },
-    '&::before': {
-      content: '""',
-      position: 'absolute',
-      top: 0,
-      left: 0,
-      bottom: 0,
-      width: '100px',
-      background: 'linear-gradient(to left, rgba(0,0,0,0), rgba(0,0,0,0.9))',
-      pointerEvents: 'none',
-      zIndex: 1
-    }
-      }}>
-        <Stack direction={"row"} sx={{py:"20px",px:"5px",width:"100%"
-        ,overflowX: 'auto',
-      flexWrap: 'nowrap',
-      '& > *': { flexShrink: 0 },
-      '&::-webkit-scrollbar': {
-        height: '8px',
-      },
-      '&::-webkit-scrollbar-thumb': {
-        backgroundColor: 'rgba(0,0,0,.2)',
-        borderRadius: '4px',
-      }}} >
-          <Box sx={{background:"#212121",width:"400px",height:"250px",borderRadius:"37px",p:"20px",mx:"20px",display:"flex",flexDirection:"column",gap:"5px",p:"20px 20px 30px 20px"}}>
-            <Avatar src='../effredcraft/justest.png' sx={{height:"60px",width:"60px"}} />
-            <Box  sx={{flex:1}}/>
-            <Stack direction={"column"} sx={{p:"10px"}}>
-            <Typography color="white" variant="body1" sx={{fontSize:"35px",fontWeight:"700"}}>AI Development</Typography>
-            <Typography color="white" variant="body1" sx={{fontSize:"12px",fontWeight:"100"}}>Our AI development team builds smart, data-driven applications that enhance decision-making, automate tasks, and deliver measurable impact across industries.</Typography>
-           </Stack>
-            </Box>
-             <Box sx={{background:"#212121",width:"400px",height:"250px",borderRadius:"37px",p:"20px",mx:"20px",display:"flex",flexDirection:"column",gap:"5px",p:"20px 20px 30px 20px"}}>
-            <Avatar src='../effredcraft/justest.png' sx={{height:"60px",width:"60px"}} />
-            <Box  sx={{flex:1}}/>
-            <Stack direction={"column"} sx={{p:"10px"}}>
-            <Typography color="white" variant="body1" sx={{fontSize:"35px",fontWeight:"700"}}>AI Development</Typography>
-            <Typography color="white" variant="body1" sx={{fontSize:"12px",fontWeight:"100"}}>Our AI development team builds smart, data-driven applications that enhance decision-making, automate tasks, and deliver measurable impact across industries.</Typography>
-           </Stack>
-            </Box>
-
-             <Box sx={{background:"#212121",width:"400px",height:"250px",borderRadius:"37px",p:"20px",mx:"20px",display:"flex",flexDirection:"column",gap:"5px",p:"20px 20px 30px 20px"}}>
-            <Avatar src='../effredcraft/justest.png' sx={{height:"60px",width:"60px"}} />
-            <Box  sx={{flex:1}}/>
-            <Stack direction={"column"} sx={{p:"10px"}}>
-            <Typography color="white" variant="body1" sx={{fontSize:"35px",fontWeight:"700"}}>AI Development</Typography>
-            <Typography color="white" variant="body1" sx={{fontSize:"12px",fontWeight:"100"}}>Our AI development team builds smart, data-driven applications that enhance decision-making, automate tasks, and deliver measurable impact across industries.</Typography>
-           </Stack>
-            </Box>
-            
-             <Box sx={{background:"#212121",width:"400px",height:"250px",borderRadius:"37px",p:"20px",mx:"20px",display:"flex",flexDirection:"column",gap:"5px",p:"20px 20px 30px 20px"}}>
-            <Avatar src='../effredcraft/justest.png' sx={{height:"60px",width:"60px"}} />
-            <Box  sx={{flex:1}}/>
-            <Stack direction={"column"} sx={{p:"10px"}}>
-            <Typography color="white" variant="body1" sx={{fontSize:"35px",fontWeight:"700"}}>AI Development</Typography>
-            <Typography color="white" variant="body1" sx={{fontSize:"12px",fontWeight:"100"}}>Our AI development team builds smart, data-driven applications that enhance decision-making, automate tasks, and deliver measurable impact across industries.</Typography>
-           </Stack>
-            </Box>
-        </Stack>
-      </Box>
+    <GradientScroller top="355px" align="right">
+    {SERVICES_UP.map((service, index) => (
+      <ServiceCard key={index} {...service} />
+    ))}
+  </GradientScroller>
+     
+    <GradientScroller top="665px" align="left">
+      {SERVICES_BOTTOM.map((service, index) => (
+        <ServiceCard key={index} {...service} />
+      ))}
+    </GradientScroller>
+    
     </Box>
   )
 }
